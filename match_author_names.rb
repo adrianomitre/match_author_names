@@ -62,7 +62,7 @@ module RobustAuthorNamesMatcher
 
   SAME_AUTHOR_THRESHOLD = 0.2
 
-  def same_author?(a, b, threshold = SAME_AUTHOR_THRESHOLD)
+  def same_author?(a, b, threshold: SAME_AUTHOR_THRESHOLD)
     authors_distance(a, b) <= threshold
   end
 
