@@ -93,30 +93,12 @@ def min_rotated_array_distance(u, v)
 end
 
 if __FILE__ == $PROGRAM_NAME
-  require 'pry-byebug'
-
-  same_author = <<~EOS.lines.map(&:chomp)
-    Adriano Brito Mitre
-    Adriano Mitre
-    Adriano Mitri
-    Adriano B. Mitre
-    Mitre, Adriano B.
-    Mitre, Adriano
-    Mitre, Adriano Brito
-    Mitri, Adriano Britto
-  EOS
-  other_authors = <<~EOS.lines.map(&:chomp)
-    Adriana Esteves Agostinho Brichta
-    Turing, Alan Mathison
-    Fernando H. Cardoso
-  EOS
-
-  all_names = same_author + other_authors
-  result = match_author_names(all_names)
-  result.each do |set|
+  list_of_names = ARGF.readlines.reject { |l| l.strip.empty? }
+  name_sets = match_author_names(list_of_names)
+  name_sets.each do |set|
     set.each do |name|
       puts name
     end
-    puts
+    puts '-' * 80
   end
 end
