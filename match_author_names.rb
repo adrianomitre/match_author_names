@@ -36,13 +36,6 @@ module RobustAuthorNamesMatcher
   end
 
   CASE_SENSITIVE = false
-
-  def relative_dl_str_dist(a, b, case_sensitive = CASE_SENSITIVE)
-    a, b = [a, b].map(&:downcase) unless case_sensitive
-    min_sz, max_sz = [a, b].map(&:size).minmax
-    string_distance(a, b) / min_sz.to_f
-  end
-
   def array_distance(a, b)
     DamerauLevenshtein.array_distance(a, b, 1, 1_000)
   end
