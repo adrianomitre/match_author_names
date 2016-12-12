@@ -35,7 +35,6 @@ module RobustAuthorNamesMatcher
     DamerauLevenshtein.string_distance(a, b, 1, 1_000)
   end
 
-  CASE_SENSITIVE = false
   def array_distance(a, b)
     DamerauLevenshtein.array_distance(a, b, 1, 1_000)
   end
@@ -45,10 +44,15 @@ module RobustAuthorNamesMatcher
     callable.call(a, b) / min_sz.to_f
   end
 
+  CASE_SENSITIVE = false
   SAME_TOKEN_THRESHOLD = 0.2
 
-  def same_token?(a, b, threshold = SAME_TOKEN_THRESHOLD)
+  def same_token?(a, b,
+      threshold: SAME_TOKEN_THRESHOLD,
+      case_sensitive: CASE_SENSITIVE
+    )
     a, b = [a, b].sort_by(&:size)
+    a, b = [a, b].map(&:downcase) unless case_sensitive
     if a.size == 1
       a[0] == b[0]
     else
