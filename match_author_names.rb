@@ -67,7 +67,6 @@ def same_author?(a, b, threshold = SAME_AUTHOR_THRESHOLD)
 end
 
 def authors_distance(a, b)
-  binding.pry unless [a, b].all? { |x| x.is_a? String }
   a, b = [a, b].sort_by(&:size)
   aw, bw = [a, b].map { |x| split_in_names_and_initials(x) }
   abw = aw + bw
