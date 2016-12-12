@@ -12,3 +12,5 @@ Wishlist:
 
 * improve performance, concentrating on improving asymptotic time and space
   complexities
+
+* add unit tests
