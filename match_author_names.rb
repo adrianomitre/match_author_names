@@ -73,7 +73,7 @@ def authors_distance(a, b)
   token_indices = abw.map { |w1| abw.index { |w2| same_token?(w1, w2) } }
   a, b = [token_indices[0, aw.size], token_indices[aw.size..-1]]
   if a.to_set.subset?(b.to_set)
-    0.0
+    SAME_AUTHOR_THRESHOLD * 0.5
   else
     relative_dist(a, b, method(:min_rotated_array_distance))
   end
