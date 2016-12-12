@@ -1,0 +1,12 @@
+GEM
+  specs:
+    damerau-levenshtein (1.2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  damerau-levenshtein
+
+BUNDLED WITH
+   1.13.6

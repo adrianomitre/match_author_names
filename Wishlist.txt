@@ -1,0 +1,11 @@
+Wishlist:
+
+* take phonetics into account, i.e., convert to some phonetic representation,
+  such as International Phonetic Alphabet (IPA), and only then apply
+  the Damerau–Levenshtein distance
+
+* give extra weight for present but unmatched names, esp. initials,
+  vs missing (rationale: incorrect)
+
+* improve gender differentiation, increasing weight for name "suffix",m
+  e.g., Adriano vs Adriana should differ more than Adriano vs Adreano.
