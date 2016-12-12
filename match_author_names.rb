@@ -45,7 +45,7 @@ module RobustAuthorNamesMatcher
   end
 
   CASE_SENSITIVE = false
-  SAME_TOKEN_THRESHOLD = 0.2
+  SAME_TOKEN_THRESHOLD = 1.0/3
 
   def same_token?(a, b,
       threshold: SAME_TOKEN_THRESHOLD,
