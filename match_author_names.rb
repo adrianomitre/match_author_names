@@ -40,8 +40,8 @@ module RobustAuthorNamesMatcher
   end
 
   def relative_dist(a, b, callable)
-    min_sz, max_sz = [a, b].map(&:size).minmax
-    callable.call(a, b) / min_sz.to_f
+    mean_sz = [a, b].map(&:size).minmax.inject(:+) / 2.0
+    callable.call(a, b) / mean_sz.to_f
   end
 
   CASE_SENSITIVE = false
