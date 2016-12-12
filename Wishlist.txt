@@ -10,7 +10,9 @@ Wishlist:
 * improve gender differentiation, increasing weight for name "suffix",m
   e.g., Adriano vs Adriana should differ more than Adriano vs Adreano.
 
-* improve performance, concentrating on improving asymptotic time and space
-  complexities
+* better documentation
 
 * add unit tests
+
+* improve performance, concentrating on improving asymptotic time and space
+  complexities
