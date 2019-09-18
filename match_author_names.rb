@@ -88,7 +88,7 @@ module RobustAuthorNamesMatcher
   end
 
   def min_rotated_array_distance(u, v)
-    rotations(u).map { |ru| array_distance(ru, v) }.min
+    rotations(u).min { |ru| array_distance(ru, v) }
   end
 end
 
